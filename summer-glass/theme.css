@@ -215,3 +215,12 @@
 :root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .canvas-navigation-controls .react-flow__controls-button:last-child {
   border-bottom:0!important;
 }
+
+/* Portal model menus: beat the legacy light-mode blue !important rule. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .canvas-theme-select-menu section > button:not(:disabled):is(.selected,:hover,:focus-visible) {
+  color:var(--liquid-text)!important;
+  background:var(--ui-selection)!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .canvas-theme-select-menu section > button:focus-visible {
+  outline:2px solid var(--primary);outline-offset:-2px;
+}

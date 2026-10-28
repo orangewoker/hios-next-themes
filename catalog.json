@@ -1,13 +1,14 @@
 {
   "themes": [
     {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "directory": "summer-glass",
       "id": "hios.summer-glass",
-      "ref": "summer-glass-v1.0.0",
+      "ref": "summer-glass-v1.0.1",
       "name": "夏日玻璃",
       "description": "薄荷晨光与森林夜色。轻盈玻璃、绿色操作与清晰的创作空间。"
     }
   ],
   "schemaVersion": 1
 }
+
