@@ -1,0 +1,217 @@
+/* Summer Glass — paired light/dark theme. Only application chrome is themed;
+ * images, videos, page backgrounds, swatches and plugin artwork stay untouched.
+ * Shared tokens also travel through the existing plugin UI bridge. */
+:root[data-theme-id="hios.summer-glass"][data-theme="light"] {
+  --ui-app-bg: #d6e7dc;
+  --primary: #197957;
+  --primary-2: #4eab83;
+  --liquid-bg: var(--ui-app-bg);
+  --liquid-surface: rgba(215, 233, 222, .90);
+  --liquid-surface-raised: rgba(225, 238, 229, .92);
+  --liquid-surface-solid: #deebe2;
+  --liquid-surface-soft: #cddfd3;
+  --liquid-border: rgba(53, 105, 81, .23);
+  --liquid-text: #203d30;
+  --liquid-text-strong: #122e22;
+  --liquid-text-2: #4e6e5c;
+  --liquid-text-3: #617d6c;
+  --liquid-text-4: #6d8676;
+  --liquid-highlight: inset 0 1px 0 rgba(242, 250, 244, .42);
+  --liquid-shadow: 0 12px 32px rgba(38, 94, 66, .10);
+  --liquid-shadow-small: 0 3px 10px rgba(38, 94, 66, .07);
+  --ui-sidebar: rgba(195, 222, 206, .56);
+  --ui-framed-workspace: rgba(217, 234, 223, .64);
+  --ui-canvas: #ccdfd2;
+  --ui-canvas-grid: #b6cfc0;
+  --ui-minimap-mask: rgba(225, 242, 231, .70);
+  --ui-accent-contrast: #ffffff;
+  --ui-nav-glass: linear-gradient(145deg, rgba(226,241,231,.72), rgba(207,229,216,.36) 55%, rgba(153,212,181,.18));
+  --ui-nav-glass-edge: rgba(62,128,94,.20);
+  --ui-nav-glass-shadow: inset 0 1px 0 rgba(239,249,242,.48), inset 0 -1px 0 rgba(48,107,78,.06), 0 3px 8px rgba(36,93,64,.08);
+  --summer-light-field: radial-gradient(ellipse at 5% 0%, rgba(133,223,181,.46), transparent 57%), radial-gradient(ellipse at 95% 95%, rgba(247,227,163,.32), transparent 60%);
+  --summer-glass-edge: rgba(234,247,239,.42);
+}
+
+:root[data-theme-id="hios.summer-glass"][data-theme="dark"] {
+  --ui-app-bg: #0d251e;
+  --primary: #6bdbb1;
+  --primary-2: #41b891;
+  --liquid-bg: var(--ui-app-bg);
+  --liquid-surface: rgba(23, 54, 43, .88);
+  --liquid-surface-raised: rgba(31, 66, 53, .92);
+  --liquid-surface-solid: #1b3c30;
+  --liquid-surface-soft: #122f25;
+  --liquid-border: rgba(156, 211, 180, .25);
+  --liquid-text: #e5f5ec;
+  --liquid-text-strong: #f2fff7;
+  --liquid-text-2: #b5d1bf;
+  --liquid-text-3: #9cbeaa;
+  --liquid-text-4: #8caf9a;
+  --liquid-highlight: inset 0 1px 0 rgba(208, 255, 228, .12);
+  --liquid-shadow: 0 12px 32px rgba(0, 14, 8, .30);
+  --liquid-shadow-small: 0 3px 10px rgba(0, 14, 8, .22);
+  --ui-sidebar: rgba(18, 49, 37, .44);
+  --ui-framed-workspace: rgba(15, 38, 29, .55);
+  --ui-canvas: #102b21;
+  --ui-canvas-grid: #315b45;
+  --ui-minimap-mask: rgba(9, 31, 21, .70);
+  --ui-accent-contrast: #0a3022;
+  --ui-nav-glass: linear-gradient(145deg, rgba(204,255,222,.16), rgba(180,244,207,.035) 55%, rgba(112,196,150,.08));
+  --ui-nav-glass-edge: rgba(162,221,186,.23);
+  --ui-nav-glass-shadow: inset 0 1px 0 rgba(212,255,229,.22), inset 0 -1px 0 rgba(0,20,11,.20), 0 3px 8px rgba(0,15,8,.18);
+  --summer-light-field: radial-gradient(ellipse at 8% 0%, rgba(45,111,76,.40), transparent 58%), radial-gradient(ellipse at 100% 100%, rgba(111,106,40,.12), transparent 65%);
+  --summer-glass-edge: rgba(181,239,202,.16);
+}
+
+:root[data-theme-id="hios.summer-glass"] {
+  --liquid-accent: var(--primary);
+  --ui-accent-hover: color-mix(in srgb, var(--primary) 88%, var(--liquid-text));
+  --ui-accent-soft: color-mix(in srgb, var(--primary) 12%, transparent);
+  --ui-accent-border: color-mix(in srgb, var(--primary) 46%, var(--liquid-border));
+  --ui-selection: color-mix(in srgb, var(--primary) 20%, var(--liquid-surface-solid));
+  --ui-hover: color-mix(in srgb, var(--primary) 9%, var(--liquid-surface-raised));
+  --ui-pressed: color-mix(in srgb, var(--primary) 16%, var(--liquid-surface-raised));
+  --ui-toolbar-hover: var(--ui-accent-soft);
+  --ui-toolbar-pressed: var(--ui-selection);
+  --ui-chrome-tint: color-mix(in srgb, var(--primary) 7%, transparent);
+  --ui-action-blue: var(--primary);
+  --ui-action-blue-soft: var(--ui-accent-soft);
+  --ui-blue-soft: var(--ui-accent-soft);
+  --ui-focus: 0 0 0 3px color-mix(in srgb, var(--primary) 26%, transparent);
+  --mono-icon: var(--primary);
+  --mono-icon-well: var(--ui-accent-soft);
+  --mono-icon-border: var(--ui-accent-border);
+  --ui-text-description: var(--liquid-text-3);
+  --ui-text-description-compact: var(--liquid-text-4);
+  --ui-shadow-3: var(--liquid-highlight), 0 18px 48px color-mix(in srgb, var(--ui-app-bg) 32%, rgba(0,25,12,.26));
+  --ui-radius-control: 10px;
+  --ui-radius-card: 18px;
+  --ui-radius-panel: 22px;
+  --ui-radius-menu: 16px;
+  --ui-surface-blur: blur(18px) saturate(125%);
+}
+
+/* The light field is painted once, never once per node. Geometry stays intact. */
+:root[data-theme-id="hios.summer-glass"][data-theme] body { background: var(--ui-app-bg); }
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell,
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell:has(> .sidebar) {
+  background: var(--summer-light-field), var(--ui-app-bg) !important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell:has(> .sidebar) > .main-content {
+  background: var(--ui-framed-workspace) !important;
+  border-color: var(--summer-glass-edge) !important;
+  box-shadow: var(--liquid-highlight);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.dashboard-page,.home-page,.unified-apps-page):not(.plugin-app-workspace) { background: transparent !important; }
+
+/* Glass on stable panels. No per-node blur, image filters, transforms or zoom. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .settings-group-plate {
+  background: var(--liquid-surface-raised);
+  border-color: var(--liquid-border);
+  box-shadow: var(--liquid-highlight), var(--liquid-shadow);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.canvas-topbar,.canvas-ai-inspector,.canvas-navigation-controls,.agent-inspector) {
+  background: var(--liquid-surface) !important;
+  border-color: var(--liquid-border) !important;
+  box-shadow: var(--liquid-highlight), var(--liquid-shadow-small);
+  backdrop-filter: var(--ui-surface-blur);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .flow-wrap { background: var(--ui-canvas) !important; }
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .flow-wrap .canvas-node:not(.is-page-group):not(.is-plain-note) {
+  box-shadow: var(--liquid-highlight), var(--liquid-shadow-small);
+  backdrop-filter: none !important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .flow-wrap .canvas-node.is-selected:not(.is-page-group):not(.is-plain-note) { box-shadow: var(--ui-focus), var(--liquid-shadow); }
+
+/* Portal menus live under body, not under the application shell. */
+:root[data-theme-id="hios.summer-glass"][data-theme] :is(.canvas-theme-select-menu,.model-picker-menu,.manju-themed-select-menu,.browser-menu,.context-menu,.plugin-install-panel,.account-dialog,.themed-delete-dialog) {
+  color: var(--ui-text) !important;
+  background: var(--liquid-surface-solid) !important;
+  border-color: var(--liquid-border) !important;
+  box-shadow: var(--ui-shadow-3) !important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] :is(.model-picker-menu label:hover,.canvas-theme-select-menu button.selected) { color: var(--ui-text) !important; background: var(--ui-selection) !important; }
+:root[data-theme-id="hios.summer-glass"][data-theme] :is(.theme-mode-toggle,.sidebar-theme-shortcut,.canvas-theme-control) { color: var(--primary) !important; border-color: var(--ui-accent-border) !important; }
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.primary-button,.node-run,.send-button) {
+  color: var(--ui-accent-contrast) !important;
+  background: var(--primary) !important;
+  border-color: var(--ui-accent-border) !important;
+  box-shadow: var(--liquid-highlight), var(--liquid-shadow-small);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.primary-button,.node-run,.send-button):hover:not(:disabled) { background: var(--ui-accent-hover) !important; }
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.appearance-card-select.active,.nav-item.active) { background: var(--ui-accent-soft) !important; border-color: var(--ui-accent-border); }
+
+@supports not (backdrop-filter: blur(1px)) {
+  :root[data-theme-id="hios.summer-glass"] { --liquid-surface: var(--liquid-surface-solid); --liquid-surface-raised: var(--liquid-surface-solid); --ui-framed-workspace: var(--ui-app-bg); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root[data-theme-id="hios.summer-glass"] { --liquid-surface: var(--liquid-surface-solid); --liquid-surface-raised: var(--liquid-surface-solid); --ui-framed-workspace: var(--ui-app-bg); --ui-surface-blur: none; }
+}
+
+/* Canvas docks: override legacy fixed blue/white chrome, including SVG hover. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.react-flow__controls,.canvas-floating-toolbar) {
+  background:var(--liquid-surface-solid)!important;
+  border-color:var(--liquid-border)!important;
+  box-shadow:var(--liquid-highlight),var(--liquid-shadow-small)!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.canvas-floating-toolbar>button,.react-flow__controls-button) {
+  color:var(--primary)!important;
+  background:transparent!important;
+  border-color:var(--liquid-border)!important;
+  box-shadow:none!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.canvas-floating-toolbar>button,.react-flow__controls-button):not(:disabled):is(.active,:hover,:focus-visible) {
+  color:var(--ui-accent-contrast)!important;
+  background:var(--primary)!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell :is(.canvas-floating-toolbar>button,.react-flow__controls-button) svg {
+  color:inherit!important;
+  stroke:currentColor!important;
+}
+
+/* Scoped finish pass: clean edges, consistent segmented controls and brand contrast. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .manju-generator-source-tabs button.active {
+  color:var(--primary)!important;background:var(--ui-selection)!important;
+  border-color:var(--ui-accent-border)!important;box-shadow:none!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .extension-create-actions .text-button {
+  min-height:34px;padding:7px 12px;border:1px solid var(--liquid-border);
+  border-radius:var(--ui-radius-control);background:transparent!important;color:var(--liquid-text-2);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .extension-create-actions .text-button:hover {
+  background:var(--ui-hover)!important;color:var(--primary);
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .recent-card {
+  border:1px solid var(--liquid-border)!important;
+  box-shadow:none!important;overflow:hidden;background:var(--liquid-surface-solid)!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .recent-card:hover {
+  border-color:var(--ui-accent-border)!important;box-shadow:none!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme="dark"] .app-shell .app-brand-mark,
+:root[data-theme-id="hios.summer-glass"][data-theme="dark"] .dsh-float-button {
+  background:#146747!important;color:#e9fff3!important;border:1px solid #398b68;
+  box-shadow:0 2px 6px rgba(0,18,10,.22)!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme="dark"] .app-brand-mark .hios-logo {
+  --hios-logo-bg:#146747;--hios-logo-ink:#e9fff3;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme="dark"] .app-brand-mark .hios-logo-svg {
+  filter:none!important;opacity:1;
+}
+
+/* Nested template glyph must inherit its button ink, not the legacy blue. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .canvas-floating-toolbar .canvas-template-glyph {
+  color:inherit!important;background:transparent!important;box-shadow:none!important;
+}
+/* One rounded material owner: avoid a rectangular blur/shadow behind the dock. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .canvas-navigation-controls {
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .canvas-navigation-controls .react-flow__controls {
+  border-radius:10px!important;overflow:hidden;
+}
+:root[data-theme-id="hios.summer-glass"][data-theme] .app-shell .canvas-navigation-controls .react-flow__controls-button:last-child {
+  border-bottom:0!important;
+}
