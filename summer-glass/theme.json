@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "hios.summer-glass",
   "name": "夏日玻璃",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "薄荷晨光与森林夜色。轻盈玻璃、绿色操作与清晰的创作空间。",
   "author": "HIOS Next",
   "variants": { "light": "theme.css", "dark": "theme.css" },

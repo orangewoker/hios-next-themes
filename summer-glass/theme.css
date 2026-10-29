@@ -224,3 +224,10 @@
 :root[data-theme-id="hios.summer-glass"][data-theme] .canvas-theme-select-menu section > button:focus-visible {
   outline:2px solid var(--primary);outline-offset:-2px;
 }
+
+/* v1.0.2: themed connection title and full-size image viewing surface. */
+:root[data-theme-id="hios.summer-glass"][data-theme] .connection-node-menu header strong { color:var(--ui-accent)!important; }
+:root[data-theme-id="hios.summer-glass"][data-theme] .image-viewer-stage,
+:root[data-theme-id="hios.summer-glass"][data-theme] .image-viewer-stage.is-editing { background:var(--ui-surface-muted)!important; }
+:root[data-theme-id="hios.summer-glass"][data-theme="light"] .image-viewer-stage,
+:root[data-theme-id="hios.summer-glass"][data-theme="light"] .image-viewer-stage.is-editing { background:repeating-linear-gradient(135deg,var(--ui-surface-muted) 0 10px,var(--ui-control) 10px 20px)!important; }
